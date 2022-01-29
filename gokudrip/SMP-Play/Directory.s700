@@ -1,0 +1,12 @@
+.include "libSFX.i"
+
+.export Directory
+
+.segment "DATA"
+sample1:
+sample1_loop:
+        .incbin "Data/gokudripw2b.brr"
+
+.segment "DIR"
+Directory:
+        .word sample1, sample1_loop
