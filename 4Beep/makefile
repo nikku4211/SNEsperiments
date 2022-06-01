@@ -9,5 +9,5 @@ derived_files	:= data/mita1.pal data/mita2.pal data/mita_tl.img data/mita_tl.img
 derived_files	:= data/mita_bl.img data/mita_bl.img data/mita_br.pmap data/mita_br.pmap
 
 # Include libSFX.make
-libsfx_dir	:= ../libSFX
+libsfx_dir	:= ../../libSFX
 include $(libsfx_dir)/libSFX.make
