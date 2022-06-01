@@ -10,5 +10,5 @@ Data/hewwohr.png.tiles: tiles_flags = -v --tile-width 16 --tile-height 16 --out-
 Data/hewwohr.png.map: map_flags = -v --tile-width 16 --tile-height 16
 
 # Include libSFX.make
-libsfx_dir	:= ../libSFX
+libsfx_dir	:= ../../libSFX
 include $(libsfx_dir)/libSFX.make
