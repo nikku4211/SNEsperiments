@@ -16,5 +16,5 @@ smp_overlays := SMP-Play
 clean_files := SMP-Play-ZP.bin
 
 # Include libSFX.make
-libsfx_dir	:= ../libSFX
+libsfx_dir	:= ../../libSFX
 include $(libsfx_dir)/libSFX.make
