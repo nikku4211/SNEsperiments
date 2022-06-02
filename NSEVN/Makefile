@@ -12,5 +12,5 @@ data/font.png.palette: palette_flags = -v --colors 4
 data/font.png.tiles: tiles_flags = -v -B 2 -D
 
 # Include libSFX.make
-libsfx_dir	:= ../../libSFXc/libSFX
+libsfx_dir	:= ../../libSFX/
 include $(libsfx_dir)/libSFX.make
