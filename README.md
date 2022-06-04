@@ -11,16 +11,16 @@ Most of them require [LibSFX](https://github.com/Optiroc/libSFX).
 
 <h3>DVDS</h3>
 
-![DVDS](DVDS/Data/DVDS.png)
+![DVDS](DVDS/DVDSpvw.png)
 
 <h3>HewwoHR</h3>
 
-![HewwoHR](HewwoHR/Data/hewwohr.png)
+![HewwoHR](HewwoHR/hewwohrpvw.png)
 
 <h3>NSEVN</h3>
 
-![NSEVN](NSEVN/data/font.png)
+![NSEVN](NSEVN/NSEVNTestBGpvw.png)
 
 <h3>gokudrip</h3>
 
-![gokudrip](gokudrip/Data/gokudrip.png)
+![gokudrip](gokudrip/gokudrippvw.png)
