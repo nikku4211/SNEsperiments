@@ -26,7 +26,7 @@ Main:
 	lda #tm(ON, ON, OFF, OFF, OFF)
 	sta TM
 	
-	RW a16i16
+	RW_forced a16i16
 	
 	stz $210D
 	stz $210D
@@ -52,41 +52,42 @@ Main:
 	lda #0
 	
 	zerotext:
-		stz textbox, x
+		stz textbox, x ;clear text area in WRAM
 		dex
 		cpx #0
 	bne zerotext
 	
-	ldx toffsetn
+	ldx toffsetn ;index at a certain part of the text source
 	stx toffset
 	ldy #0
 		
 	filltext:
-		RW a8i16
+		RW_forced a8i16
 		clc
 		lda textboxtable,x
-		beq imdone
+		beq imdone ;terminate at a null character
 		cmp #$0D
-		beq ignord
+		beq ignord ;ignore carriage return
 		cmp #$0A
-		beq breakline
+		beq breakline ;go to next line at a line feed
 		inx	
 		clc
 		sta textbox,y
 		iny
 	
 	filltextp:
-		lda #%00100000
+    RW_forced a8i16
+		lda #%00100000 ;give the text a priority attribute
 		sta textbox,y
 		iny
 	bra endphobe
 	
 	breakline:
-		RW a16i16
+		RW_forced a16i16
 		lda #0
 		tya
 		clc
-		adc #$44
+		adc #$44 ;go to next line
 		and #$FFC0
 		tay
 		sta textline
@@ -94,16 +95,16 @@ Main:
 	bra filltext
 	
 	ignord:
-		inx
+		inx ;ignoring carriage return
 		iny
 	bra filltextp
 		
 	endphobe:
-		RW a16i16
+		RW_forced a16i16
 		tya
 		and #$3f
-		cmp #$2c
-		lda #0
+		cmp #$40
+		;lda #0
 		bne filltext
 		iny
 		iny
@@ -111,7 +112,7 @@ Main:
 	bra filltextp
 	
 	imdone:
-		RW a8i16
+		RW_forced a8i16
 	
 	lda #inidisp(ON, DISP_BRIGHTNESS_MAX)
 	sta SFX_inidisp
@@ -119,7 +120,7 @@ Main:
 	VBL_on
 	
 :	
-	RW a16i16
+	RW_forced a16i16
 	lda toffsetn
 	cmp toffset
 	ldx #1559
@@ -129,7 +130,7 @@ Main:
 	bra :-
 	
 	VBlankHand:
-		RW a8i16
+		RW_forced a8i16
 		HDMA_set_absolute 0, 2, BG1VOFS, hdmavofs
 		lda #%00000001
 		sta HDMAEN
@@ -161,7 +162,7 @@ Main:
 		sta $2110
 		stz $2110 ;offset textbox
 		
-		RW a16i16
+		RW_forced a16i16
 		
 		lda SFX_joy1cont
 		and JOY_B
