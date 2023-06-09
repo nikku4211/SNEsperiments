@@ -18,5 +18,5 @@ data/sfbgf.png.tiles: tiles_flags = -v -B 2
 data/sfbgf.png.map: map_flags = -v -M snes -B 2
 
 # Include libSFX.make
-libsfx_dir	:= ../libSFX
+libsfx_dir	:= ../../libSFX
 include $(libsfx_dir)/libSFX.make
