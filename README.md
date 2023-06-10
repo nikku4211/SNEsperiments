@@ -27,4 +27,4 @@ Most of them require [LibSFX](https://github.com/Optiroc/libSFX).
 
 <h3>LibVin</h3>
 
-![LibVin]()
+![LibVin](libVin/SquirrelScreenieBig.png)
